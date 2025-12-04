@@ -90,6 +90,96 @@ class Todo extends StatelessWidget {
                 fontWeight: FontWeight.w600,
               ),
             ),
+            SizedBox(height: 40),
+            Row(
+              children: [
+                RichText(
+                  text: TextSpan(
+                    children: [
+                      TextSpan(
+                        text: 'To',
+                        style: GoogleFonts.poppins(
+                          fontSize: 20,
+                          color: Colors.deepOrange,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      TextSpan(
+                        text: 'dos',
+
+                        style: GoogleFonts.poppins(
+                          color: Colors.black,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(width: 20),
+                Container(
+                  height: 20,
+                  width: 20,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(6),
+                    color: const Color.fromARGB(255, 231, 212, 207),
+                    shape: BoxShape.rectangle,
+                  ),
+                  child: Center(
+                    child: Text(
+                      '1',
+                      style: TextStyle(color: Colors.deepOrange),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 12),
+            Expanded(
+              child: ListView.separated(
+                itemCount: 2,
+                separatorBuilder: (BuildContext context, int index) =>
+                    SizedBox(height: 10),
+                itemBuilder: (BuildContext context, int index) {
+                  return Container(
+                    height: 150,
+                    width: double.infinity,
+
+                    decoration: BoxDecoration(
+                      color: const Color.fromARGB(255, 239, 218, 216),
+                      shape: BoxShape.rectangle,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(top: 8, left: 8),
+                              child: Transform.scale(
+                                scale: 1.3,
+                                child: Checkbox(
+                                  value: true,
+                                  onChanged: (value) {},
+                                ),
+                              ),
+                            ),
+                            SizedBox(width: 10),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 10.0),
+                              child: Text(
+                                'This is tittle',
+                                style: GoogleFonts.poppins(fontSize: 20),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              ),
+            ),
           ],
         ),
       ),
